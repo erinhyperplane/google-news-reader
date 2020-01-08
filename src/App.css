@@ -1,17 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Teko:700&display=swap');
+
 .App {
   text-align: center;
+  font-family: 'Teko';
 }
 
 .news-board{
-  margin: 30px;
-  padding: 20px;
-  border-color: gray;
-  border-style: solid;
-  border-radius: 30px;
+  margin: 20px;
+  font-family: 'Teko';
+  font-size: 120%;
 }
 
 .news-unit{
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+  color: rgb(151, 151, 160);
 }
+
+.title{
+  width:70%;
+  text-align: left;
+  text-decoration: none;
+  color:rgb(94, 94, 100);
+}
+
+.title:hover{
+  color: rgb(250, 0, 146);
+  font-weight: bold;
+  font-size: 110%;
+  text-decoration: underline;
+  text-decoration-style: double;
+  
+}
+
+.published-date{
+  font-size: 100%;
+}
+
+.news-item-0{
+  font-size: 180%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: bolder;
+}
+
+.news-item-1{
+  font-size: 150%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.button{
+  margin: 10px;
+  border: none;
+  text-align: center;
+  font-weight: bolder;
+  color: rgb(255, 230, 0);
+  background-color: gray;
+}
+
+#greeting{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 40px;
+  color:rgb(69, 165, 255);
+}
+
+

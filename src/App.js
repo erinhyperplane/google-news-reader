@@ -19,12 +19,12 @@ function App() {
     fetchNews()
   },[])
 
-
+  
 
 
   return (
     <div className="App">
-      <p>Today's News for you</p>
+      <p id="greeting">Today's news for you</p>
       <NewsBoard news={news} />
       
     </div>
