@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function SingleNews({singleNews}){
+export default function SingleNews({singleNews, handleClickOpen, selectNews, news}){
     
     const year = singleNews.publishedAt.substring(0,4);
     
@@ -18,12 +18,25 @@ export default function SingleNews({singleNews}){
     const newDateFormat = `${monthAbbr} ${date}, ${year} `;
 
 
+
     return(
         <div className="news-unit">
-            <a href={singleNews.url} className="title">{singleNews.title} 
-                <button className="button">PREVIEW>></button></a> 
+            <a href={singleNews.url} className="title">{singleNews.title}</a> 
+            <button 
+                className="button"
+                onClick={()=> {
+                    console.log("clicked")
+                    handleClickOpen('paper')
+                    console.log("handleclickopen executed")
+                    selectNews(news)
+                    console.log("news selected")
+                }}
+
+            >
+            Preview
+            </button>
             <p className="published-date"><b>{time} </b>{newDateFormat}</p>
-            
+
         </div>
     )
 };
