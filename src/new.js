@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function SingleNews({singleNews, handleClickOpen, selectNews, news}){
+export default function SingleNews({singleNews, onClick}){
     
     const year = singleNews.publishedAt.substring(0,4);
     
@@ -20,20 +20,15 @@ export default function SingleNews({singleNews, handleClickOpen, selectNews, new
 
 
     return(
-        <div className="news-unit">
-            <a href={singleNews.url} className="title">{singleNews.title}</a> 
+        <div className="news-unit" onClick={onClick}>
+            {singleNews.title}
             <button 
                 className="button"
                 onClick={()=> {
-                    console.log("clicked")
-                    handleClickOpen('paper')
-                    console.log("handleclickopen executed")
-                    selectNews(news)
-                    console.log("news selected")
+                    window.open(`${singleNews.url}`)
                 }}
-
             >
-            Preview
+            Go to Website
             </button>
             <p className="published-date"><b>{time} </b>{newDateFormat}</p>
 

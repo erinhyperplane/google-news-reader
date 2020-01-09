@@ -29,29 +29,22 @@ export default function NewsBoard({news}){
     }, [open]);
 
     return(
+        
         <div className="news-board">
-        <NewsModal open={open} news={selectedNews} handleClose={handleClose} />
-            {news.map(
-                    (singleNews, i) => {
-                        return (
-                            <div className={`news-item-${i}`}>
-                                <NewsModal open={open} handleClose={handleClose} news={selectedNews} />
-                                <SingleNews 
-                                    singleNews={singleNews} 
-                                    key={singleNews.author} 
-                                    value={singleNews}
-                                 />
-                                 
-                                                
-                                     
-                                
-                            </div>
-                        )
-                    })}
-            
+            <NewsModal handleClose={handleClose} open={open} singleNews={selectedNews} />
+            {news.map((singleNews,i)=>{
+                return(
+                    <div className={`news-item-${i}`}>
+                        <SingleNews singleNews={singleNews} key={i} onClick={()=>{
+                            handleClickOpen('paper')
+                            selectNews(singleNews)
+                        }} />
+                    </div>
+                )
+                
+            })}
         </div>
         
     )
 };
-
 
